@@ -209,6 +209,11 @@ a:hover {
 /* PC画面幅 */
 @media screen and (min-width: 992px), print {
 	.header {
+		height: 100px;
+	}
+	.header__logo {
+		width: 210px;
+		margin-left: 50px;
 	}
 }
 
@@ -320,6 +325,25 @@ a:hover {
 /* PC画面幅 */
 @media screen and (min-width: 992px), print {
 	.gnav {
+		display: block;
+		position: static;
+		width: auto;
+		height: auto;
+	}
+	.gnav__list {
+		display: flex;
+	}
+	.gnav__link {
+		display: block;
+		padding: 1em;
+		font-size: 18px;
+	}
+	.gnav__link._current::after {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 4px;
+		background: #37952f;
 	}
 }
 
@@ -333,6 +357,7 @@ a:hover {
 /* PC画面幅 */
 @media screen and (min-width: 992px), print {
 	.mainContents {
+		margin-top: 100px;
 	}
 }
 /*----------------------------------------
@@ -361,8 +386,28 @@ a:hover {
 	text-align: center;
 }
 
-/* PC画面幅 */
-@media screen and (min-width: 992px), print {
+/* タブレット画面幅 */
+@media screen and (min-width: 768px), print {
+	.footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 50px;
+	}
+	.footer__menu {
+		border-right: 1px solid #707070;
+	}
+	.footer__menu > li {
+		display: inline-block;
+		border-left: 1px solid #707070;
+		border-bottom: 0;
+	}
+	.footer__menu a {
+		padding: 0 1em;
+	}
+	.footer__menu a:hover {
+		text-decoration: underline;
+	}
 }
 
 /*----------------------------------------
@@ -386,6 +431,8 @@ a:hover {
 /* タブレット画面幅 */
 @media screen and (min-width: 768px), print {
 	.section {
+		padding-top: 80px;
+		padding-bottom: 80px;
 	}
 }
 /*----------------------------------------
@@ -403,6 +450,10 @@ a:hover {
 
 /* タブレット画面幅 */
 @media screen and (min-width: 768px), print {
+	.headingL {
+		margin-bottom: 40px;
+		font-size: 48px;
+	}
 }
 /*----------------------------------------
 	button
@@ -445,6 +496,7 @@ a:hover {
 }
 /* タブレット画面幅 */
 @media screen and (min-width: 768px), print {
-	.conterButton {
+	.centerButton {
+		margin: 40px auto;
 	}
 }

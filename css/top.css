@@ -27,6 +27,27 @@
 
 /* タブレット画面幅 */
 @media screen and (min-width: 768px), print {
+	.mainVisual {
+		padding: 40px 0;
+	}
+	.mainVisual__inner {
+		max-width: 1080px;
+		margin: auto;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.mainVisual__catch {
+		display: flex;
+		justify-content: center;
+		padding: 0 calc((90 / 1080) * 100%);
+		font-size: 36px;
+		font-size: min(3.33vw, 36px);
+	}
+	.mainVisual__image {
+		flex-shrink: 0;
+		width: 40%;
+	}
 }
 
 /* serviceList
@@ -61,56 +82,92 @@
 }
 
 /* タブレット画面幅 */
-@media screen and (min-width:768px), print {
-  
+@media screen and (min-width: 768px), print {
+	.serviceList {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.serviceList__item {
+		display: flex;
+		flex-direction: column;
+		width: calc((100% - 40px) / 3);
+	}
+	.serviceList__btn {
+		margin-top: auto;
+	}
 }
 
 /* pickupList
 ----------------------------------------*/
-.pickupList{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: -20px;
+.pickupList {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-top: -20px;
 }
-.pickupList__item{
-  width: calc((100% - 15px) /2);
-  margin-top: 20px;
+.pickupList__item {
+	width: calc((100% - 15px) / 2);
+	margin-top: 20px;
 }
-.pickupList__item a{
-  color: inherit;
-  font-weight: bold;
-  text-decoration: none;
+.pickupList__item a {
+	color: inherit;
+	font-weight: bold;
+	text-decoration: none;
 }
-.pickupList__thumb{
-  width: 100%;
+.pickupList__thumb {
+	width: 100%;
 }
-.pickupList__title{
-  position: relative;
-  margin-top: 1em;
-  padding-left: 1em;
-  font-size: 14px;
-  line-height: 1.3em;
+.pickupList__title {
+	position: relative;
+	margin-top: 1em;
+	padding-left: 1em;
+	font-size: 14px;
+	line-height: 1.3em;
 }
-.pickupList__title::before{
-  position: absolute;
-  left: 0;
-  top: 0.4em;
-  content: "";
-  display: block;
-  width: 0.6em;
-  height: 0.6em;
-  border-top:2px solid;
-  border-right:2px solid;
-  transform: rotate(45deg);
+.pickupList__title::before {
+	position: absolute;
+	left: 0;
+	top: 0.4em;
+	content: "";
+	display: block;
+	width: 0.6em;
+	height: 0.6em;
+	border-top: 2px solid;
+	border-right: 2px solid;
+	transform: rotate(45deg);
 }
 
 /* タブレット画面幅 */
-@media screen and (min-width:768px), print {
-  
+@media screen and (min-width: 768px), print {
+	.pickupList__item {
+		width: calc((100% - 40px) / 3);
+	}
+	.pickupList::after {
+		content: "";
+		display: block;
+		width: calc((100% - 40px) / 3);
+	}
+	.pickupList__title {
+		font-size: 18px;
+		transition: all 0.3s;
+	}
+	.pickupList__item a:hover .pickupList__title {
+		color: #37952f;
+	}
 }
 
 /* PC画面幅 */
-@media screen and (min-width:992px), print {
-  
+@media screen and (min-width: 992px), print {
+	.pickupList__item {
+		width: calc((100% - 60px) / 4);
+	}
+  .pickupList::after, 
+  .pickupList::before {
+    content: "";
+    display: block;
+		width: calc((100% - 60px) / 4);
+  }
+  .pickupList::before {
+    order: 1;
+  }
 }
